@@ -43,6 +43,8 @@ The basic operation stack for building apps like this is
 * https://flask.palletsprojects.com/en/3.0.x/
 * https://react.dev
 * https://nodejs.org/en
+* https://rapidapi.com/category/Health%20and%20Fitness
+* https://getstream.io/blog/fitness-api/
 
 ### My Work with APIs
 * https://github.com/GiovannyJ/bookup
