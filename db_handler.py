@@ -1,4 +1,5 @@
 import connect as c
+import json
 '''
 This is a functions page that will handle all of the data that gets sent
 to and from the API. Each function is used in unison with the connection class
@@ -14,7 +15,10 @@ db = c.Connect()
 
 def data_GET(tablename):
     sql = f"SELECT * FROM {tablename}"
-    return db.select_query(sql)
+    results = db.select_query(sql)
+    columns = [col[0] for col in db.cur.description]  # Get column names
+    data = [dict(zip(columns, row)) for row in results]
+    return json.dumps(data)
 
 
 def data_INSERT(tablename, columns, data):

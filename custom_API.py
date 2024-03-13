@@ -34,7 +34,7 @@ of the request will have to be different
 def users():
     if request.method == 'GET':
         # Retrieve all users
-        return jsonify(handler.data_GET("users"))
+        return handler.data_GET("USERS")
 
     elif request.method == 'POST':
         # Example of how to get data from the request body
@@ -55,6 +55,12 @@ def users():
         data = request.get_json()
         handler.data_DELETE("users", data['column'], data['value'])
         return jsonify({'message': 'User deleted successfully'})
+
+@app.route('/goals', methods=['GET', 'POST', 'PATCH', 'DELETE'])
+def goals():
+    if request.method == 'GET':
+        # Retrieve all users
+        return handler.data_GET("GOALS")
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -23,6 +23,7 @@ class Connect:
             user=os.getenv("DB_USER"),
             passwd=os.getenv("DB_PASSWD"),
             database=os.getenv("DB_DATABASE"),
+            port=os.getenv("DB_PORT")
         )
         self.cur = self.db.cursor()
     
